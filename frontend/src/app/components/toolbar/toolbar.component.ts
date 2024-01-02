@@ -97,6 +97,17 @@ export class ToolbarComponent implements OnInit {
     );
   }
 
+  get debugTooltip(): string {
+    if (!this.isReleased()) {
+      return `Unit Test is disabled, because the ${this.transformation.type.toLowerCase()} is not released.`;
+    }
+    return 'Unit Test';
+  }
+
+  debug(): void {
+    // TODO create method to call endpoint
+  }
+
   get deprecateTooltip(): string {
     if (!this.isReleased()) {
       return `Deprecate is disabled, because the ${this.transformation.type.toLowerCase()} is not released.`;

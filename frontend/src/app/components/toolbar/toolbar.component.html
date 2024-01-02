@@ -78,6 +78,14 @@
       >desktop_access_disabled</mat-icon
     >
     <mat-icon
+      *ngIf="!isWorkflow"
+      class="clickable unselectable"
+      title="{{ debugTooltip }}"
+      (click)="debug()"
+      [ngClass]="{ disabled: !isReleased() }"
+      >bug_report</mat-icon
+    >
+    <mat-icon
       class="clickable unselectable"
       title="{{ deleteTooltip }}"
       (click)="delete()"
